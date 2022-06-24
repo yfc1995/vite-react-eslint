@@ -8,8 +8,14 @@
     "preview": "vite preview",
     "lint": "eslint --fix --ext .js,.jsx src",
     "prepare": "husky install",
-    "test": "pnpm lint"
-
+    "checkEslintCommit": "pnpm lint:commit",
+    "lint:commit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
@@ -24,9 +30,12 @@
     "@vitejs/plugin-react": "^1.3.0",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
+    "husky": "^8.0.0",
+    "install": "^0.13.0",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.2",
     "vite": "^2.9.9",
     "vite-plugin-dynamic-import-module": "^0.2.1",
-    "vite-plugin-eslint": "^1.6.1",
-    "husky": "^8.0.0"
+    "vite-plugin-eslint": "^1.6.1"
   }
 }
